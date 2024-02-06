@@ -5,21 +5,16 @@ const employees = [
     { name: "shohel", experience: 0, starting: 29000, increment: 4000 },
 ];
 
-function calculateCurrentSalary(employees){
-    for( const employe of employees){
-        const totalSalaryAll =  (employe.experience * employe.increment) + employe.starting;
-        let sumAll = [0];
-        for( let i = 0 ; i < totalSalaryAll.length ; i ++){
-            sumAll.push(totalSalaryAll)
-            sumAll++
-        }
-        return sumAll;
-       
+function calculateCurrentSalary(employee){
+    let totalSalarys = 0;
+    for(let i = 0; i < employee.length;i++){
+        const employees = employee[i];
+        const currentSalary = employees.starting + (employees.experience * employees.increment);
+        totalSalarys = totalSalarys + currentSalary; 
     }
-
+    return totalSalarys;
 }
+const totalSalary = calculateCurrentSalary(employees);
 
-
-const totalSalary = calculateCurrentSalary(employees)
-console.log(totalSalary);
+console.log("Total salary to be provided by the company in a month:", totalSalary);
 
